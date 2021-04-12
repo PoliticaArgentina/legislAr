@@ -1,5 +1,5 @@
 
-# Herramientas para el análisis `legisl`ativo de `Ar`rgentina usando `R` <a><img src="https://github.com/politicaargentina/data_warehouse/blob/master/hex/legisAr.png?raw=true" width="200" align="right" /></a>
+# Herramientas para el análisis `legisl`ativo de `Ar`rgentina usando `R` <a><img src="https://github.com/politicaargentina/data_warehouse/blob/master/hex/legislAr.png?raw=true" width="200" align="right" /></a>
 
 
 `{geoAr}` brinda herramientas que facilitan el acceso y el trabajo con datos espaciales de Argentina desde `R`. 
