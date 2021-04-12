@@ -5,9 +5,11 @@
 \title{Diccionario de proyectos de ley sometidos a votación
 (\emph{Bills collection})}
 \usage{
-show_available_bills(viewer = FALSE)
+show_available_bills(chamber = NULL, viewer = FALSE)
 }
 \arguments{
+\item{chamber}{parámetro para elegir entre las cámaras de 'diputados' o 'senadores'}
+
 \item{viewer}{Por default es \code{TRUE} y  muestra una tabla formateada en el \emph{Viewer} de \emph{RStudio}. Cuando \code{FALSE} imprime en consola.}
 }
 \description{
@@ -15,10 +17,10 @@ Función que devuelve un \emph{data.frame} listado de proyectos de ley con un id
 }
 \examples{
 
-show_available_bills(viewer = FALSE)
+show_available_bills(chamber = 'senadores' , viewer = FALSE)
 
 
 }
 \seealso{
-\code{\link{plot_bill}, \link{get_bill_votes}}
+\link{get_bill_votes}
 }

@@ -29,6 +29,9 @@ Imports:
     attempt,
     glue,
     lubridate,
-    ggthemes
+    ggthemes,
+    vroom,
+    purrr,
+    assertthat
 Suggests: 
     DT

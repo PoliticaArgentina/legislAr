@@ -8,16 +8,16 @@
 get_bill_votes(bill = NULL)
 }
 \arguments{
-\item{bill}{Parametro en el que se especifica el id del proyecto obtenido con \code{\link{show_available_bills}}}
+\item{bill}{Parámetro en el que se especifica el id del proyecto obtenido con \code{\link{show_available_bills}}}
 }
 \description{
 Función que devuelve un \emph{data.frame} con el detalle de los votos individuales de los legisladores a un proyecto de ley.
 }
 \examples{
 
-get_bill_votes(bill = "1926-Diputados")
+get_bill_votes(bill = "2218-DIPUTADOS")
 
 }
 \seealso{
-\code{\link{plot_bill}, \link{show_available_bills}}
+\link{show_available_bills}
 }
