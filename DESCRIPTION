@@ -1,13 +1,13 @@
 Package: legislAr
-Title: What the Package Does (One Line, Title Case)
+Title: Argentina Legislative Data and Tools
 Version: 0.0.0.9000
 Authors@R: 
-    person(given = "First",
-           family = "Last",
-           role = c("aut", "cre"),
-           email = "first.last@example.com",
-           comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
+    person(given = "Juan Pablo",
+           family = "Ruiz Nicolini",
+           role = c("aut", "cre", "cph"),
+           email = "juanpabloruiznicolini@gmail.com",
+           comment = c(ORCID = "0000-0002-3138-6343"))
+Description: Paquete que failicia el acceso y trabajo con datos legislativos de Argetnina. Basados en repositorio del proyecto "La Década Votada" (Andy Tow).
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
@@ -17,12 +17,7 @@ Imports:
     magrittr,
     curl,
     dplyr,
-    ggparliament,
-    ggplot2,
-    ggtext,
     httr,
-    jsonlite,
-    readr,
     stringr,
     tibble,
     tidyr,
