@@ -67,8 +67,6 @@ output <-   if(is.null(default)){
             } else {
 
 
-      df <- base::suppressWarnings(df)
-
 
     bloques <- df[[1]] %>%
       dplyr::select(bloque_id = 1,
@@ -109,7 +107,7 @@ output <-   if(is.null(default)){
 
 
 
-base::suppressWarnings(output)
+ base::suppressWarnings(return(output))
 
 
 }
