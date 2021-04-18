@@ -20,4 +20,7 @@ if(getRversion() >= "2.15.1")
                            "party_short",
                            "seats",
                            "value",
-                           "x", "y"))
+                           "base",
+                           "x", "y",
+                           "negativos",
+                           "presentes"))

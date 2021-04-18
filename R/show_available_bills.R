@@ -38,13 +38,14 @@ show_available_bills <- function(chamber = NULL,
 
   default <- NULL
 
-  df <- base::suppressWarnings(base::try(default <- vroom::vroom(file = url,
+  df <- base::suppressWarnings(base::suppressMessages(base::try(default <- vroom::vroom(file = url,
                                                                  col_names = FALSE,
                                                                  col_select = c(id = 1,
                                                                                 fecha = 5,
-                                                                                descripcion = 17)),
-                                         vroom::cols(),
-                                         silent = TRUE))
+                                                                                descripcion = 17),
+                                                                 col_types = NULL,
+                                                                 progress = FALSE), silent = TRUE)
+                                         ))
 
   if(is.null(default)){
 
@@ -70,7 +71,8 @@ show_available_bills <- function(chamber = NULL,
 
   }else{
 
-    df
+
+    suppressMessages(return(df))
 
     }
 
