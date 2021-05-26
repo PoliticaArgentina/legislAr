@@ -32,3 +32,5 @@ Suggests:
     DT
 Depends: 
     R (>= 2.10)
+URL: https://github.com/PoliticaArgentina/legislAr
+BugReports: https://github.com/PoliticaArgentina/legislAr/issues
