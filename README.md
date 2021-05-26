@@ -1,5 +1,5 @@
 
-# Herramientas para el análisis `legisl`ativo de `Ar`rgentina usando `R` <a><img src="https://github.com/politicaargentina/data_warehouse/blob/master/hex/legislAr.png?raw=true" width="200" align="right" /></a>
+# Herramientas para el análisis `legisl`ativo de `Ar`rgentina usando `R` <a><img src="man/figures/logo.png" width="200" align="right" /></a>
 
 
 `{legislAr}` brinda herramientas que facilitan el acceso y el trabajo con datos legislativos de Argentina desde `R`. 
@@ -21,6 +21,6 @@ devtools::install_github("politicaargentina/legislAr")
 
 ---
 
-El paquete está pensado para facilitar la exploración de datos compartidos por Andy Tow en su proyecto [_La Década Votada_](https://andytow.com/scripts/disciplina/index-d.html) en cuya [documentación](https://andytow.com/scripts/disciplina/doc.html) se detallan las bases de datos disponibilizadas, sus cambios y descripciones.  
+El paquete está pensado para facilitar la exploración de datos compartidos por Andy Tow en su proyecto [_La Década Votada_](https://andytow.com/scripts/disciplina/index-d.html) en cuya [documentación](https://andytow.com/scripts/disciplina/doc.html) se detallan las bases de datos disponibilizadas, sus campos y descripciones.  
 
 ![](https://andytow.com/scripts/disciplina/assets/img/votaciones.gif)

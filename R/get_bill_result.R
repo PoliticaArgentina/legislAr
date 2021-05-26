@@ -1,4 +1,5 @@
-#' Obtiene el resultado de la votación de un proyecto de leu
+#' Obtiene el resultado de la votación de un proyecto de ley
+#' (\emph{get bill votation result})
 #'
 #' @param bill identificador del proyecto de ley que se obtiene con \link{show_available_bills}
 #'

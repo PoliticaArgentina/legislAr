@@ -2,7 +2,7 @@
 % Please edit documentation in R/get_raw_data.R
 \name{get_raw_data}
 \alias{get_raw_data}
-\title{Obtener datos crudos de La Década Votata
+\title{Obtener datos crudos de La Década Votada
 (\emph{Download bill raw data})}
 \usage{
 get_raw_data(chamber = NULL, base = NULL)

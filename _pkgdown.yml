@@ -1,0 +1,14 @@
+url: https://politicaargentina.github.io/legislAr/
+template:
+  params:
+    bootswatch: cerulean
+home:
+  strip_header: true
+
+  links:
+  - text: La Década Votada - Andy Tow
+    href: https://www.decadavotada.com.ar/
+
+authors:
+  Juan Pablo Ruiz Nicolini:
+    href: https://tuqmano.ar

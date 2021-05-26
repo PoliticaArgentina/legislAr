@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://politicaargentina.github.io/legislAr//index.html</loc>
+  </url>
+  <url>
+    <loc>https://politicaargentina.github.io/legislAr//reference/get_bill_result.html</loc>
+  </url>
+  <url>
+    <loc>https://politicaargentina.github.io/legislAr//reference/get_bill_votes.html</loc>
+  </url>
+  <url>
+    <loc>https://politicaargentina.github.io/legislAr//reference/get_codebook.html</loc>
+  </url>
+  <url>
+    <loc>https://politicaargentina.github.io/legislAr//reference/get_raw_data.html</loc>
+  </url>
+  <url>
+    <loc>https://politicaargentina.github.io/legislAr//reference/legislAr.html</loc>
+  </url>
+  <url>
+    <loc>https://politicaargentina.github.io/legislAr//reference/pipe.html</loc>
+  </url>
+  <url>
+    <loc>https://politicaargentina.github.io/legislAr//reference/show_available_bills.html</loc>
+  </url>
+</urlset>

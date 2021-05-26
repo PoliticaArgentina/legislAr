@@ -2,16 +2,18 @@
 % Please edit documentation in R/get_codebook.R
 \name{get_codebook}
 \alias{get_codebook}
-\title{Obtener libro de códigos de bases crudas del proyecto la 'Década Votada'}
+\title{Obtener libro de códigos de bases crudas del proyecto la 'Década Votada'
+(\emph{Get datasets codebooks})}
 \usage{
-get_codebook(data = NULL)
+get_codebook(base = NULL)
 }
 \arguments{
-\item{data}{define el libro de códigos a desargar del conjunto de conjunto de datos disponible}
+\item{base}{define el libro de códigos a descargar del conjunto de conjunto de datos disponibles: 'bloques', 'diputados', 'votacion' o 'asuntos'}
 }
 \value{
 a "tbl_df" "tbl" "data.frame" object
 }
 \description{
 Obtener libro de códigos de bases crudas del proyecto la 'Década Votada'
+(\emph{Get datasets codebooks})
 }

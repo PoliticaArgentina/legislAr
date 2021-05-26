@@ -2,5 +2,8 @@ pandoc: 2.11.2
 pkgdown: 1.6.1
 pkgdown_sha: ~
 articles: {}
-last_built: 2021-04-18T03:29Z
+last_built: 2021-05-26T12:58Z
+urls:
+  reference: https://politicaargentina.github.io/legislAr//reference
+  article: https://politicaargentina.github.io/legislAr//articles
 

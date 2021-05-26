@@ -1,4 +1,4 @@
-#' Obtener datos crudos de La Década Votata
+#' Obtener datos crudos de La Década Votada
 #' (\emph{Download bill raw data})
 #'
 #'@description
@@ -144,7 +144,18 @@ df <-   if(base == "all"){
           }
 
 
-      base::message("Los datos fueron obtenidos del proyecto 'Decada Votada' de Andy Tow. La documentacion y el libro de codigos se encuetra disponible en https://decadavotada.andytow.com/doc.html")
+
+
+# download message one per session hack
+if(base::getOption('descarga-decadavotada', TRUE)){
+
+
+  message(glue::glue("Los datos fueron obtenidos del proyecto 'Decada Votada' de Andy Tow el {format(Sys.Date(), '%d %B de %Y')}. La documentacion y el libro de codigos se encuetra disponible en https://decadavotada.andytow.com/doc.html"))
+
+  options('descarga-decadavotada' = FALSE)
+
+}
+
 
 
       return(df)

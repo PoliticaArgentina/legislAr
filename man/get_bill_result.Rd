@@ -2,7 +2,8 @@
 % Please edit documentation in R/get_bill_result.R
 \name{get_bill_result}
 \alias{get_bill_result}
-\title{Obtiene el resultado de la votación de un proyecto de leu}
+\title{Obtiene el resultado de la votación de un proyecto de ley
+(\emph{get bill votation result})}
 \usage{
 get_bill_result(bill = NULL)
 }
@@ -10,5 +11,6 @@ get_bill_result(bill = NULL)
 \item{bill}{identificador del proyecto de ley que se obtiene con \link{show_available_bills}}
 }
 \description{
-Obtiene el resultado de la votación de un proyecto de leu
+Obtiene el resultado de la votación de un proyecto de ley
+(\emph{get bill votation result})
 }
