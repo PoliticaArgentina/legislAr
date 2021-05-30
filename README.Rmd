@@ -44,3 +44,35 @@ El paquete está pensado para facilitar la exploración de datos compartidos por
 ![](https://andytow.com/scripts/disciplina/assets/img/votaciones.gif)
 
 
+### Ejemplo de uso (*Usage*)
+
+```{r}
+library(legislAr)
+
+
+(data <- show_available_bills(chamber = 'diputados')) # Preview avialable data 
+
+# busco votación en particular: tratamiento del diploma del genocida Bussi en la cámara de Diputados 
+(bussi <- data %>% 
+  dplyr::filter(stringr::str_detect(string = description, 
+                      pattern = 'Bussi')))
+
+# explorar resultado
+  get_bill_result(bill = '244-DIPUTADOS') %>% 
+    dplyr::select(voto, n)
+
+# descargo los votos individuales
+  get_bill_votes(bill = '244-DIPUTADOS') 
+  
+```
+
+
+
+
+## `{legislAr}` es parte del universo de paquetes **polAr**
+
+
+```{r, echo=FALSE}
+knitr::include_graphics("https://github.com/PoliticaArgentina/data_warehouse/raw/master/hex/collage.png")
+```
+

@@ -42,7 +42,7 @@ show_available_bills <- function(chamber = NULL,
                                                                  col_names = FALSE,
                                                                  col_select = c(id = 1,
                                                                                 fecha = 5,
-                                                                                descripcion = 17),
+                                                                                description = 17),
                                                                  col_types = NULL,
                                                                  progress = FALSE), silent = TRUE)
                                          ))
@@ -57,7 +57,7 @@ show_available_bills <- function(chamber = NULL,
   df <- df %>%
     dplyr::mutate(id = as.character(glue::glue("{id}-{toupper(chamber)}")),
                   fecha = lubridate::as_date(fecha),
-                  noth = lubridate::month(fecha),
+                  month = lubridate::month(fecha),
                   year= lubridate::year(fecha)) %>%
     dplyr::select(-c(fecha))
 

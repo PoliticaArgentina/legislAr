@@ -96,6 +96,74 @@
 <p>El paquete está pensado para facilitar la exploración de datos compartidos por Andy Tow en su proyecto <a href="https://andytow.com/scripts/disciplina/index-d.html"><em>La Década Votada</em></a> en cuya <a href="https://andytow.com/scripts/disciplina/doc.html">documentación</a> se detallan las bases de datos disponibilizadas, sus campos y descripciones.</p>
 <p><img src="https://andytow.com/scripts/disciplina/assets/img/votaciones.gif"></p>
 </div>
+<div id="ejemplo-de-uso-usage" class="section level3">
+<h3 class="hasAnchor">
+<a href="#ejemplo-de-uso-usage" class="anchor"></a>Ejemplo de uso (<em>Usage</em>)</h3>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/PoliticaArgentina/legislAr">legislAr</a></span><span class="op">)</span>
+
+<span class="op">(</span><span class="va">data</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/show_available_bills.html">show_available_bills</a></span><span class="op">(</span>chamber <span class="op">=</span> <span class="st">'diputados'</span><span class="op">)</span><span class="op">)</span> <span class="co"># Preview avialable data </span>
+<span class="co">#&gt; # A tibble: 2,491 x 4</span>
+<span class="co">#&gt;    id          descripcion                                            noth  year</span>
+<span class="co">#&gt;    &lt;chr&gt;       &lt;chr&gt;                                                 &lt;dbl&gt; &lt;dbl&gt;</span>
+<span class="co">#&gt;  1 2335-DIPUT~ Expediente 719-D-19 de ley. Declárase como Capital N~     4  2019</span>
+<span class="co">#&gt;  2 2334-DIPUT~ Expediente 1259-D-2018 de ley. Institúyase el 21 de ~     4  2019</span>
+<span class="co">#&gt;  3 2333-DIPUT~ Expediente 3309-D-2018 de ley. Declárase el primero ~     4  2019</span>
+<span class="co">#&gt;  4 2214-DIPUT~ Simplificación y desburocratización para el desarrol~     3  2018</span>
+<span class="co">#&gt;  5 2215-DIPUT~ Simplificación y desburocratización para el desarrol~     3  2018</span>
+<span class="co">#&gt;  6 2216-DIPUT~ Simplificación y desburocratización de la administra~     3  2018</span>
+<span class="co">#&gt;  7 2217-DIPUT~ Solicitud de Tratamiento sobre Tablas solicitado por~     3  2018</span>
+<span class="co">#&gt;  8 2218-DIPUT~ Habilitar el Tratamiento del Expediente 2133-D-2018.~     4  2018</span>
+<span class="co">#&gt;  9 2219-DIPUT~ Habilitar el Tratamiento del Expediente 2142-D-2018.~     4  2018</span>
+<span class="co">#&gt; 10 2220-DIPUT~ Habilitar el Tratamiento del Expediente 1818-D-2018.~     4  2018</span>
+<span class="co">#&gt; # ... with 2,481 more rows</span>
+
+
+<span class="op">(</span><span class="va">bussi</span> <span class="op">&lt;-</span> <span class="va">data</span> <span class="op">%&gt;%</span> 
+  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="fu">stringr</span><span class="fu">::</span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_detect.html">str_detect</a></span><span class="op">(</span>string <span class="op">=</span> <span class="va">descripcion</span>, 
+                      pattern <span class="op">=</span> <span class="st">'Bussi'</span><span class="op">)</span><span class="op">)</span><span class="op">)</span>
+<span class="co">#&gt; # A tibble: 2 x 4</span>
+<span class="co">#&gt;   id          descripcion                                             noth  year</span>
+<span class="co">#&gt;   &lt;chr&gt;       &lt;chr&gt;                                                  &lt;dbl&gt; &lt;dbl&gt;</span>
+<span class="co">#&gt; 1 179-DIPUTA~ Proceder a la Apertura del sobre que contiene la Decl~     2  1998</span>
+<span class="co">#&gt; 2 244-DIPUTA~ Rechazo del Diploma del Diputado Electo por el Distri~     5  2000</span>
+
+<span class="co">#explorar resultado</span>
+  <span class="fu"><a href="reference/get_bill_result.html">get_bill_result</a></span><span class="op">(</span>bill <span class="op">=</span> <span class="st">'244-DIPUTADOS'</span><span class="op">)</span> <span class="op">%&gt;%</span> 
+    <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">voto</span>, <span class="va">n</span><span class="op">)</span>
+<span class="co">#&gt; # A tibble: 5 x 2</span>
+<span class="co">#&gt;   voto             n</span>
+<span class="co">#&gt;   &lt;chr&gt;        &lt;dbl&gt;</span>
+<span class="co">#&gt; 1 presentes      191</span>
+<span class="co">#&gt; 2 ausentes        66</span>
+<span class="co">#&gt; 3 abstenciones     2</span>
+<span class="co">#&gt; 4 afirmativos    181</span>
+<span class="co">#&gt; 5 negativos        7</span>
+
+<span class="co">#votos individuales</span>
+  <span class="fu"><a href="reference/get_bill_votes.html">get_bill_votes</a></span><span class="op">(</span>bill <span class="op">=</span> <span class="st">'244-DIPUTADOS'</span><span class="op">)</span> 
+<span class="co">#&gt; Warning: One or more parsing issues, see `problems()` for details</span>
+<span class="co">#&gt; # A tibble: 257 x 4</span>
+<span class="co">#&gt;    voto       nombre_bloque           nombre_legislador          provincia      </span>
+<span class="co">#&gt;    &lt;chr&gt;      &lt;chr&gt;                   &lt;chr&gt;                      &lt;chr&gt;          </span>
+<span class="co">#&gt;  1 AFIRMATIVO Acción por la República FERRERO, Fernanda          Cdad.Aut.Bs.As.</span>
+<span class="co">#&gt;  2 AFIRMATIVO FREPASO                 ALESSANDRO, Dario Pedro    Cdad.Aut.Bs.As.</span>
+<span class="co">#&gt;  3 AFIRMATIVO FREPASO                 BRAVO, Alfredo Pedro       Cdad.Aut.Bs.As.</span>
+<span class="co">#&gt;  4 AFIRMATIVO FREPASO                 GARRÉ, Nilda Celia         Cdad.Aut.Bs.As.</span>
+<span class="co">#&gt;  5 AFIRMATIVO FREPASO                 GONZALEZ, María América    Cdad.Aut.Bs.As.</span>
+<span class="co">#&gt;  6 AFIRMATIVO FREPASO                 LANZA, José Luis           Cdad.Aut.Bs.As.</span>
+<span class="co">#&gt;  7 AFIRMATIVO FREPASO                 PARENTELLA, Irma Fidela    Cdad.Aut.Bs.As.</span>
+<span class="co">#&gt;  8 AFIRMATIVO FREPASO                 POLINO, Hector Teodoro     Cdad.Aut.Bs.As.</span>
+<span class="co">#&gt;  9 AFIRMATIVO FREPASO                 PUIGGROS, Adriana Victoria Cdad.Aut.Bs.As.</span>
+<span class="co">#&gt; 10 AFIRMATIVO Justicialista           MOURIÑO, Javier            Cdad.Aut.Bs.As.</span>
+<span class="co">#&gt; # ... with 247 more rows</span></code></pre></div>
+</div>
+</div>
+<div id="legislar-es-parte-del-universo-de-paquetes-polar" class="section level2">
+<h2 class="hasAnchor">
+<a href="#legislar-es-parte-del-universo-de-paquetes-polar" class="anchor"></a><code>{legislAr}</code> es parte del universo de paquetes <strong>polAr</strong>
+</h2>
+<p><img src="https://github.com/PoliticaArgentina/data_warehouse/raw/master/hex/collage.png" width="100%"></p>
 </div>
 
   </div>
