@@ -39,7 +39,7 @@ show_available_bills <- function(chamber = NULL,
   default <- NULL
 
   df <- base::suppressWarnings(base::suppressMessages(base::try(default <- vroom::vroom(file = url,
-                                                                 col_names = FALSE,
+                                                                 col_names = TRUE,
                                                                  col_select = c(id = 1,
                                                                                 fecha = 5,
                                                                                 description = 17),
